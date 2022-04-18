@@ -10,6 +10,8 @@ public class PathFinding : MonoBehaviour
     public float moveSpeed = 10;
     public float rotationSpeed;
 
+    public float minimumDistance = 0.25f;
+
     public GridManager grid;
 
     Rigidbody2D myRB;
@@ -182,6 +184,10 @@ public class PathFinding : MonoBehaviour
     }
 
 
+    public bool IsAtDestination()
+    {
+        return Vector2.Distance(transform.position, endObj.position) <= minimumDistance;
+    }
 
 
     int GetHCost(Node nodeA, Node nodeB)
