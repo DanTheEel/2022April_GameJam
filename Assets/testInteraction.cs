@@ -24,4 +24,12 @@ public class testInteraction : MonoBehaviour, IInteractable
         }
         
     }
+    public void Start()
+    {
+        if(this.gameObject.tag != "Interactable")
+        {
+            this.gameObject.tag = "Interactable";
+        }
+    }
 }
+
