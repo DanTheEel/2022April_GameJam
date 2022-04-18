@@ -25,6 +25,7 @@ public class NPC_Behavior : MonoBehaviour
 
     void Update()
     {
+
         if(pathFinding.IsAtDestination())
         {
             if(wandering)
@@ -43,11 +44,6 @@ public class NPC_Behavior : MonoBehaviour
             waitingTimeLeft = waitingTime;
             Wander();
         }
-        else
-        {
-
-        }
-
 
     }
 
