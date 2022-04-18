@@ -7,7 +7,11 @@ public class NPC_Behavior : MonoBehaviour
     public List<Transform> waypoints;
     int waypointIndex = 0;
 
-    public float waitingTime = 5;
+    bool wandering = false;
+    public float wanderingRadius = 2;
+    Vector2 basePosition;
+
+    public float waitingTime = 1;   // seconds
     float waitingTimeLeft = 0;
 
     PathFinding pathFinding;
@@ -15,29 +19,51 @@ public class NPC_Behavior : MonoBehaviour
     void Start()
     {
         pathFinding = GetComponent<PathFinding>();
+        pathFinding.endObj.position = waypoints[waypointIndex].position;
+        basePosition = waypoints[waypointIndex].position;
     }
 
     void Update()
     {
         if(pathFinding.IsAtDestination())
         {
-            if (waitingTimeLeft <= 0)
-            {
-                MoveToWaypoint(waypointIndex);
-                waypointIndex++;
-
-                if(waypointIndex >= waypoints.Count)
-                {
-                    waypointIndex = 0;
-                }
-
-                waitingTimeLeft = waitingTime;
-            }
-            else
+            if(wandering)
             {
                 waitingTimeLeft -= Time.deltaTime;
             }
+            else
+            {
+                Wander();
+            }
         }
+
+        if(waitingTimeLeft <= 0)
+        {
+            wandering = true;
+            waitingTimeLeft = waitingTime;
+            Wander();
+        }
+        else
+        {
+
+        }
+
+
+    }
+
+    public void Wander()
+    {
+        pathFinding.endObj.position = (Random.insideUnitCircle * wanderingRadius) + basePosition;
+    }
+
+    [ContextMenu("Resume Patrole")]
+    public void ResumePatrol()
+    {
+        wandering = false;
+
+        waypointIndex++;
+        pathFinding.endObj.position = waypoints[waypointIndex].position;
+        basePosition = waypoints[waypointIndex].position;
     }
 
     public void MoveToWaypoint(int index)

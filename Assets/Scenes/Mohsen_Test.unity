@@ -281,6 +281,7 @@ MonoBehaviour:
   - {fileID: 125963414}
   - {fileID: 912471520}
   - {fileID: 149752598}
+  wanderingRadius: 5
   waitingTime: 1
 --- !u!1 &125963412
 GameObject:
@@ -905,6 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFear: 100
+  fearMeterFill: {fileID: 1454823568}
 --- !u!1 &793850424
 GameObject:
   m_ObjectHideFlags: 0
