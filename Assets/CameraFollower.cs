@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollower : MonoBehaviour
 {
     public Transform Target;
-    public float followSpeed;
+    public float Smoothing = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class CameraFollower : MonoBehaviour
     void Update()
     {
         Vector3 TargetLoc = new Vector3(Target.position.x, Target.position.y, transform.position.z) ;
-
-        transform.position = Vector3.Lerp(transform.position, TargetLoc, Time.deltaTime * followSpeed);
+        Vector3 TargetVelocity = Target.GetComponent<Rigidbody2D>().velocity;
+        transform.position = Vector3.SmoothDamp(transform.position, TargetLoc, Time.deltaTime * Smoothing); ;
     }
 }
