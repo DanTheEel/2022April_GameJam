@@ -10,7 +10,7 @@ public class PlayerHide : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            isHiding = true;
+            isHiding = true;            
         }
     }
 
