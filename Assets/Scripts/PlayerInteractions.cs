@@ -31,7 +31,7 @@ public class PlayerInteractions : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("triggerEnter");
+        
         if (other.CompareTag("Interactable"))
         {          
             nearestObjects.Add(other.gameObject);
@@ -39,7 +39,7 @@ public class PlayerInteractions : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("triggerExit");
+       
         if (other.CompareTag("Interactable"))
         {
             nearestObjects.Remove(other.gameObject);
