@@ -6,7 +6,7 @@ public class PlayerInteractions : MonoBehaviour
 {
     public float interactionCooldown = 0.05f;
     private List<GameObject> nearestObjects = new List<GameObject>();
-    private float timeLeft;
+    //private float timeLeft;
     private GameObject closest;
     private void Start()
     {
@@ -19,14 +19,11 @@ public class PlayerInteractions : MonoBehaviour
         {
             closest = nearestObjects.First();
         }        
-        else if (nearestObjects.Count>2)
+        else if (nearestObjects.Count>=2)
         {
             var sorted = nearestObjects.OrderBy(obj => (obj.transform.position - transform.position).sqrMagnitude);
-
             closest = sorted.First();
         }
-          
-
         if (Input.GetKeyDown(KeyCode.E) && closest != null)
         {
             closest.GetComponent<IInteractable>().interact();
