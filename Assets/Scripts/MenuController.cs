@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public GameObject quitPanel;
+    public GameObject creditsPanel;
 
 
     // Start is called before the first frame update
     void Start()
     {
         quitPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,9 +23,14 @@ public class MenuController : MonoBehaviour
         
     }
 
-    void PlayGame()
+    public void PlayGame()
     {
-        
+        creditsPanel.SetActive(true);
+    }
+
+    public void CloseCreditsScreen()
+    {
+        creditsPanel.SetActive(false);
     }
 
     public void QuitConfirmationPanel() 
