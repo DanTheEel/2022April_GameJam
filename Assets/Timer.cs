@@ -6,7 +6,21 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float timeValue;
+    private float oneMinuteLeft;
     public Text timeText;
+    public AudioSource oneMinuteLeftSound;
+    public GameObject gameOverCanvas;
+
+    private void Awake()
+    {
+        gameOverCanvas.SetActive(false);
+    }
+
+    private void Start()
+    {
+        oneMinuteLeft = timeValue - 60;
+        oneMinuteLeftSound.PlayDelayed(oneMinuteLeft);
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,6 +32,7 @@ public class Timer : MonoBehaviour
         else
         {
             timeValue = 0;
+            gameOverCanvas.SetActive(true);
         }
 
         DisplayTime(timeValue);
