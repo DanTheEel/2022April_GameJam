@@ -70,9 +70,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9196375020415845153}
   - component: {fileID: 9196375020415845154}
+  - component: {fileID: 9196375020415845166}
   - component: {fileID: 9196375020415845155}
   - component: {fileID: 9196375020415845167}
-  - component: {fileID: 9196375020415845166}
   - component: {fileID: 9196375020415845152}
   m_Layer: 7
   m_Name: NPC
@@ -115,6 +115,22 @@ MonoBehaviour:
   grid: {fileID: 0}
   body: {fileID: 0}
   triggered: 1
+--- !u!114 &9196375020415845166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196375020415845156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf3040afe0384144b0b8b9288fd879c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderingRadius: 5
+  waitingTime: 1
+  NPC_Target: {fileID: 0}
+  npcTargetPrefab: {fileID: 6623714863511434447, guid: 424faecfa3fd8cb46bfef1ea2d720bf6, type: 3}
 --- !u!50 &9196375020415845155
 Rigidbody2D:
   serializedVersion: 4
@@ -152,24 +168,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &9196375020415845166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9196375020415845156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf3040afe0384144b0b8b9288fd879c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  wanderingRadius: 5
-  waitingTime: 1
 --- !u!212 &9196375020415845152
 SpriteRenderer:
   m_ObjectHideFlags: 0

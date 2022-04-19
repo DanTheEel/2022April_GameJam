@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class NPC_Behavior : MonoBehaviour
 {
-    public List<Transform> waypoints;
-    int waypointIndex = 0;
-
     bool wandering = false;
     public float wanderingRadius = 2;
     Vector2 basePosition;
@@ -15,12 +12,17 @@ public class NPC_Behavior : MonoBehaviour
     float waitingTimeLeft = 0;
 
     PathFinding pathFinding;
+    public Transform NPC_Target;
+    public GameObject npcTargetPrefab;
 
     void Start()
     {
         pathFinding = GetComponent<PathFinding>();
-        pathFinding.endObj.position = waypoints[waypointIndex].position;
-        basePosition = waypoints[waypointIndex].position;
+        GameObject instantiatedPrefab = GameObject.Instantiate(npcTargetPrefab);
+        NPC_Target = instantiatedPrefab.transform;
+        pathFinding.endObj = NPC_Target;
+        NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
+        basePosition = Waypoint_System.instance.GetCurrentWaypoint();
     }
 
     void Update()
@@ -49,22 +51,21 @@ public class NPC_Behavior : MonoBehaviour
 
     public void Wander()
     {
-        pathFinding.endObj.position = (Random.insideUnitCircle * wanderingRadius) + basePosition;
+        Vector2 randomPoint = Random.insideUnitCircle;
+        Debug.Log(randomPoint);
+        NPC_Target.position = (randomPoint * wanderingRadius) + basePosition;
     }
 
-    [ContextMenu("Resume Patrole")]
+    [ContextMenu("Resume Patrol")]
     public void ResumePatrol()
     {
         wandering = false;
 
-        waypointIndex++;
-        pathFinding.endObj.position = waypoints[waypointIndex].position;
-        basePosition = waypoints[waypointIndex].position;
+        Waypoint_System.instance.currentWaypointIndex++;
+        NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
+        basePosition = Waypoint_System.instance.GetCurrentWaypoint();
     }
 
-    public void MoveToWaypoint(int index)
-    {
-        pathFinding.endObj = waypoints[index];
-    }
+   
 
 }
