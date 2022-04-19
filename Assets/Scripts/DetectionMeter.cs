@@ -23,7 +23,10 @@ public class DetectionMeter : MonoBehaviour
     {
         if (isBeingDetected)
         {
-            detectionMeter += Time.deltaTime * detectingSpeed;
+            if(detectionMeter < detectionDuration)
+            {
+                detectionMeter += Time.deltaTime * detectingSpeed;
+            }
             if (detectionMeter >= detectionDuration)
             {
                 // you are detected

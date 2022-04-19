@@ -19,4 +19,5 @@ public class Waypoint_System : MonoBehaviour
     {
         return waypoints[currentWaypointIndex].position;
     }
+
 }
