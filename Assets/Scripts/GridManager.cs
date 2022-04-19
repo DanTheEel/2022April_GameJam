@@ -98,7 +98,7 @@ public class GridManager: MonoBehaviour
 
     public List<Node> path;  //visualize path
 
-    /*
+    
     private void OnDrawGizmos()  //for visualization of grid in editor  (7)
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 0.1f));
@@ -117,5 +117,5 @@ public class GridManager: MonoBehaviour
             }
         }
     }
-    */
+    
 }

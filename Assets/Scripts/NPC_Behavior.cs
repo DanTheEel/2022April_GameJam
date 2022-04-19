@@ -4,67 +4,99 @@ using UnityEngine;
 
 public class NPC_Behavior : MonoBehaviour
 {
-    public List<Transform> waypoints;
-    int waypointIndex = 0;
-
     bool wandering = false;
     public float wanderingRadius = 2;
     Vector2 basePosition;
+    public float defaultSpeed = 2.5f;
 
     public float waitingTime = 1;   // seconds
     float waitingTimeLeft = 0;
 
     PathFinding pathFinding;
+    public Transform NPC_Target;
+    public GameObject npcTargetPrefab;
+
+    public Transform fleePoint;
+    public float fleeingTime = 2f;  // seconds
+    public float fleeSpeed = 5;
+
+    public bool distracted = false;
+    public float gatheringRadius = 3f;
 
     void Start()
     {
         pathFinding = GetComponent<PathFinding>();
-        pathFinding.endObj.position = waypoints[waypointIndex].position;
-        basePosition = waypoints[waypointIndex].position;
+        GameObject instantiatedPrefab = GameObject.Instantiate(npcTargetPrefab);
+        NPC_Target = instantiatedPrefab.transform;
+        pathFinding.endObj = NPC_Target;
+        NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
+        basePosition = Waypoint_System.instance.GetCurrentWaypoint();
+        pathFinding.moveSpeed = defaultSpeed;
     }
 
     void Update()
     {
 
-        if(pathFinding.IsAtDestination())
+        if(!distracted)
         {
-            if(wandering)
+            if (pathFinding.IsAtDestination())
             {
-                waitingTimeLeft -= Time.deltaTime;
+                if (wandering)
+                {
+                    waitingTimeLeft -= Time.deltaTime;
+                }
+                else
+                {
+                    Wander();
+                }
             }
-            else
+
+            if (waitingTimeLeft <= 0)
             {
+                wandering = true;
+                waitingTimeLeft = waitingTime;
                 Wander();
             }
         }
-
-        if(waitingTimeLeft <= 0)
-        {
-            wandering = true;
-            waitingTimeLeft = waitingTime;
-            Wander();
-        }
-
+       
     }
 
     public void Wander()
     {
-        pathFinding.endObj.position = (Random.insideUnitCircle * wanderingRadius) + basePosition;
+        pathFinding.moveSpeed = defaultSpeed;
+        Vector2 randomPoint = Random.insideUnitCircle;
+        NPC_Target.position = (randomPoint * wanderingRadius) + basePosition;
     }
 
-    [ContextMenu("Resume Patrole")]
+    [ContextMenu("Resume Patrol")]
     public void ResumePatrol()
     {
         wandering = false;
 
-        waypointIndex++;
-        pathFinding.endObj.position = waypoints[waypointIndex].position;
-        basePosition = waypoints[waypointIndex].position;
+        pathFinding.moveSpeed = defaultSpeed;
+        NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
+        basePosition = Waypoint_System.instance.GetCurrentWaypoint();
     }
 
-    public void MoveToWaypoint(int index)
+   public void Distract(Transform distraction)
     {
-        pathFinding.endObj = waypoints[index];
+        distracted = true;
+        NPC_Target.position = distraction.position + (Random.insideUnitSphere * gatheringRadius);
+    }
+
+    public void JumpScare()
+    {
+        NPC_Target.position = fleePoint.position + (Random.insideUnitSphere * gatheringRadius);
+        StartCoroutine(Flee());
+    }
+
+    public IEnumerator Flee()
+    {
+        pathFinding.moveSpeed = fleeSpeed;
+
+        yield return new WaitForSeconds(fleeingTime);
+        distracted = false;
+        ResumePatrol();
     }
 
 }
