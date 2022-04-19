@@ -7,6 +7,7 @@ public class NPC_Behavior : MonoBehaviour
     bool wandering = false;
     public float wanderingRadius = 2;
     Vector2 basePosition;
+    public float defaultSpeed = 2.5f;
 
     public float waitingTime = 1;   // seconds
     float waitingTimeLeft = 0;
@@ -14,6 +15,13 @@ public class NPC_Behavior : MonoBehaviour
     PathFinding pathFinding;
     public Transform NPC_Target;
     public GameObject npcTargetPrefab;
+
+    public Transform fleePoint;
+    public float fleeingTime = 2f;  // seconds
+    public float fleeSpeed = 5;
+
+    public bool distracted = false;
+    public float gatheringRadius = 3f;
 
     void Start()
     {
@@ -23,36 +31,40 @@ public class NPC_Behavior : MonoBehaviour
         pathFinding.endObj = NPC_Target;
         NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
         basePosition = Waypoint_System.instance.GetCurrentWaypoint();
+        pathFinding.moveSpeed = defaultSpeed;
     }
 
     void Update()
     {
 
-        if(pathFinding.IsAtDestination())
+        if(!distracted)
         {
-            if(wandering)
+            if (pathFinding.IsAtDestination())
             {
-                waitingTimeLeft -= Time.deltaTime;
+                if (wandering)
+                {
+                    waitingTimeLeft -= Time.deltaTime;
+                }
+                else
+                {
+                    Wander();
+                }
             }
-            else
+
+            if (waitingTimeLeft <= 0)
             {
+                wandering = true;
+                waitingTimeLeft = waitingTime;
                 Wander();
             }
         }
-
-        if(waitingTimeLeft <= 0)
-        {
-            wandering = true;
-            waitingTimeLeft = waitingTime;
-            Wander();
-        }
-
+       
     }
 
     public void Wander()
     {
+        pathFinding.moveSpeed = defaultSpeed;
         Vector2 randomPoint = Random.insideUnitCircle;
-        Debug.Log(randomPoint);
         NPC_Target.position = (randomPoint * wanderingRadius) + basePosition;
     }
 
@@ -61,11 +73,30 @@ public class NPC_Behavior : MonoBehaviour
     {
         wandering = false;
 
-        Waypoint_System.instance.currentWaypointIndex++;
+        pathFinding.moveSpeed = defaultSpeed;
         NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
         basePosition = Waypoint_System.instance.GetCurrentWaypoint();
     }
 
-   
+   public void Distract(Transform distraction)
+    {
+        distracted = true;
+        NPC_Target.position = distraction.position + (Random.insideUnitSphere * gatheringRadius);
+    }
+
+    public void JumpScare()
+    {
+        NPC_Target.position = fleePoint.position + (Random.insideUnitSphere * gatheringRadius);
+        StartCoroutine(Flee());
+    }
+
+    public IEnumerator Flee()
+    {
+        pathFinding.moveSpeed = fleeSpeed;
+
+        yield return new WaitForSeconds(fleeingTime);
+        distracted = false;
+        ResumePatrol();
+    }
 
 }
