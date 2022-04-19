@@ -898,7 +898,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 898625218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1295273833}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OpenCreditsPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &898625218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1666,6 +1678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitPanel: {fileID: 1977976344}
   creditsPanel: {fileID: 298478451}
+  menuForwardSelect: {fileID: 8300000, guid: 90df7890c648db74da4de62bd8260112, type: 3}
+  menuBackSelect: {fileID: 8300000, guid: f5a47b146cc9e1940b6da39b25f97e1a, type: 3}
+  menuAudioSource: {fileID: 185510436}
 --- !u!1 &1308291598
 GameObject:
   m_ObjectHideFlags: 0
