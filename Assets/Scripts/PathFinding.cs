@@ -55,7 +55,7 @@ public class PathFinding : MonoBehaviour
             // if in the same node, just move towards the target
             if(SameNode(transform , endObj))
             {
-                myRB.AddForce(moveSpeed * 10 * (endObj.transform.position - transform.position));
+                myRB.AddForce(moveSpeed * 30 * (endObj.transform.position - transform.position));
             }
 
             if (startObj.position != endObj.position)

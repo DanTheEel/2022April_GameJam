@@ -12,6 +12,7 @@ public class Distraction_System : MonoBehaviour
     }
 
     public Transform distractionTest;
+    public float fearPerSpook = 25;
 
     public List<GameObject> NPCs;
     private void Start()
@@ -29,7 +30,7 @@ public class Distraction_System : MonoBehaviour
             if(NPCs[0].GetComponent<NPC_Behavior>().distracted)
             {
                 Waypoint_System.instance.currentWaypointIndex++;
-                FearMeter.instance.AddFear(25);
+                FearMeter.instance.AddFear(fearPerSpook);
                 ActivateJumpScare();
             }
             else
