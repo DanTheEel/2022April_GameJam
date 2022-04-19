@@ -11,7 +11,6 @@ public class Distraction_System : MonoBehaviour
         instance = this;
     }
 
-    public Transform distractionTest;
     public float fearPerSpook = 25;
 
     public List<GameObject> NPCs;
@@ -32,10 +31,6 @@ public class Distraction_System : MonoBehaviour
                 Waypoint_System.instance.currentWaypointIndex++;
                 FearMeter.instance.AddFear(fearPerSpook);
                 ActivateJumpScare();
-            }
-            else
-            {
-                ActivateDistraction(distractionTest);
             }
         }
     }
