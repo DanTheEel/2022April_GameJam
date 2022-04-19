@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f77661f56e63d4498a75d9e48937b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcBehavior: {fileID: 0}
 --- !u!1 &9196375020415845156
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endObj: {fileID: 0}
-  moveSpeed: 10
+  moveSpeed: 2.5
   rotationSpeed: 0
   minimumDistance: 0.25
   grid: {fileID: 0}
@@ -128,9 +129,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderingRadius: 5
+  defaultSpeed: 2.5
   waitingTime: 1
   NPC_Target: {fileID: 0}
   npcTargetPrefab: {fileID: 6623714863511434447, guid: 424faecfa3fd8cb46bfef1ea2d720bf6, type: 3}
+  fleePoint: {fileID: 0}
+  fleeingTime: 3
+  fleeSpeed: 5
+  distracted: 0
+  gatheringRadius: 3
 --- !u!50 &9196375020415845155
 Rigidbody2D:
   serializedVersion: 4
