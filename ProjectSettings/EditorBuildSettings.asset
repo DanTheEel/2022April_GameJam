@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Roni_Workspace/Menu.unity
+    guid: de1221517e4e6ef4d893a3453631ea32
+  - enabled: 1
     path: Assets/Scenes/Cole_Test.unity
     guid: 8702e2c15b4acc649a70c8d09ccfb5eb
   m_configObjects: {}

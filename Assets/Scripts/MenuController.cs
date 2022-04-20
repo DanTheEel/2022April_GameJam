@@ -26,6 +26,13 @@ public class MenuController : MonoBehaviour
         
     }
 
+  
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
+        menuAudioSource.PlayOneShot(menuBackSelect);
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

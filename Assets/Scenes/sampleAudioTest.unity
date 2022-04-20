@@ -942,7 +942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130266009047094441, guid: 7ffbba111eb3ebd40bd7c906299e30fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.28
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 3130266009047094441, guid: 7ffbba111eb3ebd40bd7c906299e30fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1234,6 +1234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5683842545179966092, guid: 4b53f1cea2c578549b34271ff6428b73, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8189556221491697697, guid: 4b53f1cea2c578549b34271ff6428b73, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1281,6 +1285,10 @@ PrefabInstance:
     - target: {fileID: 8189556221491697708, guid: 4b53f1cea2c578549b34271ff6428b73, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189556221491697711, guid: 4b53f1cea2c578549b34271ff6428b73, type: 3}
+      propertyPath: soundOffset
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b53f1cea2c578549b34271ff6428b73, type: 3}

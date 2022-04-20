@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  soundOffset: 0.02
   playerFootstepsAudioClipList:
   - {fileID: 8300000, guid: e7f6616571c53fe429a5ea66bb998151, type: 3}
   - {fileID: 8300000, guid: 3164d95a92e9f37448ea20ab4cdbc9f4, type: 3}

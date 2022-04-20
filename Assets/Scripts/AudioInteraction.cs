@@ -22,6 +22,10 @@ public class AudioInteraction : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     void Start()
     {
+        if (this.gameObject.tag != "Interactable")
+        {
+            this.gameObject.tag = "Interactable";
+        }
         if (!TryGetComponent<AudioSource>(out audioSource))
         {
             audioSource = this.gameObject.AddComponent<AudioSource>();
