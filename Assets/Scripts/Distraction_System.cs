@@ -67,7 +67,6 @@ public class Distraction_System : MonoBehaviour
     {
         foreach (GameObject npc in NPCs)
         {
-            npc.GetComponent<NPC_Behavior>().npcVisualAnim.ResetTrigger("Exclamation");
             npc.GetComponent<NPC_Behavior>().npcVisualAnim.SetTrigger("Exclamation");
         }
     }

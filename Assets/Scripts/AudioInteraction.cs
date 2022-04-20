@@ -15,8 +15,12 @@ public class AudioInteraction : MonoBehaviour, IInteractable
     public void interact()
     {
         audioSource.PlayOneShot(audioClip);
-        CircleTrigger.enabled = true;
-        Distraction_System.instance.ActivateDistraction(this.transform);
+        //CircleTrigger.enabled = true;
+        if (Waypoint_System.instance.GetCurrentRoom().interactables.Contains(this.gameObject))
+        {
+            Distraction_System.instance.ActivateDistraction(this.transform);
+            Distraction_System.instance.ActivateDistractionVisuals();
+        }
     }
 
     // Start is called before the first frame update
