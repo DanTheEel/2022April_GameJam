@@ -23,8 +23,11 @@ public class testInteraction : MonoBehaviour, IInteractable
             GetComponent<SpriteRenderer>().color = Color.blue;
         }
 
-        Distraction_System.instance.ActivateDistraction(this.transform);
-        
+        if (Waypoint_System.instance.GetCurrentRoom().interactables.Contains(this.gameObject))
+        {
+            Distraction_System.instance.ActivateDistraction(this.transform);
+        }
+
     }
     public void Start()
     {

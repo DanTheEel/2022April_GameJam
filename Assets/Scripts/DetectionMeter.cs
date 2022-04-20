@@ -50,7 +50,7 @@ public class DetectionMeter : MonoBehaviour
 
     public void SetDetection(bool isBeingDetected)
     {
-        if (isBeingDetected && !PlayerHidingSystem.instance.hidden)
+        if (isBeingDetected)
         {
             if(detectionMeter < detectionDuration)
             {

@@ -20,4 +20,18 @@ public class Waypoint_System : MonoBehaviour
         return waypoints[currentWaypointIndex].position;
     }
 
+    public Room GetCurrentRoom()
+    {
+        Room currentRoom = null;
+        foreach(Room room in GameObject.FindObjectsOfType<Room>())
+        {
+            if (room.roomWaypoint == waypoints[currentWaypointIndex])
+            {
+                currentRoom = room;
+            }
+        }
+
+        return currentRoom;
+    }
+
 }
