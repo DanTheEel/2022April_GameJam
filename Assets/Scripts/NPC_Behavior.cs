@@ -5,7 +5,9 @@ using UnityEngine;
 public class NPC_Behavior : MonoBehaviour
 {
     bool wandering = false;
-    public float wanderingRadius = 2;
+    public float wanderingMinRadius = 1;
+    public float wanderingMaxRadius = 5;
+    public float wanderingRadius;
     Vector2 basePosition;
     public float defaultSpeed = 2.5f;
 
@@ -50,6 +52,7 @@ public class NPC_Behavior : MonoBehaviour
         npcSR = GetComponent<SpriteRenderer>();
         npcSR.color = defaultColor;
 
+        wanderingRadius = wanderingMinRadius;
     }
 
     void Update()

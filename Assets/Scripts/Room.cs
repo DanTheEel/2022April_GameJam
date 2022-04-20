@@ -18,6 +18,7 @@ public class Room : MonoBehaviour
         if(collision.tag == "NPC")
         {
             collision.GetComponent<PathFinding>().pathfinding = false;
+            collision.GetComponent<NPC_Behavior>().wanderingRadius = collision.GetComponent<NPC_Behavior>().wanderingMaxRadius;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -26,6 +27,7 @@ public class Room : MonoBehaviour
         if (collision.tag == "NPC")
         {
             collision.GetComponent<PathFinding>().pathfinding = true;
+            collision.GetComponent<NPC_Behavior>().wanderingRadius = collision.GetComponent<NPC_Behavior>().wanderingMinRadius;
         }
     }
 
