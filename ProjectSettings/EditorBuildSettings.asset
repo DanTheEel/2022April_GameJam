@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cole_Test.unity
     guid: 8702e2c15b4acc649a70c8d09ccfb5eb
+  - enabled: 1
+    path: Assets/Scenes/Roni_Workspace/GameOverScene.unity
+    guid: 60655827ac6fced449a2dc0fe5ccb27f
   m_configObjects: {}
