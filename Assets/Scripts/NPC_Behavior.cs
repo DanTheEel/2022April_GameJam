@@ -99,7 +99,7 @@ public class NPC_Behavior : MonoBehaviour
     [ContextMenu("Resume Patrol")]
     public void ResumePatrol()
     {
-        wandering = false;
+        wandering = true;
 
         pathFinding.moveSpeed = defaultSpeed;
         NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();

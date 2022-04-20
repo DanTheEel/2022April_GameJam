@@ -7,6 +7,7 @@ public class Room : MonoBehaviour
     public List<GameObject> interactables;
 
     public Transform roomWaypoint;
+    public Transform fleeingPoint;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class Room : MonoBehaviour
         {
             collision.GetComponent<PathFinding>().pathfinding = false;
             collision.GetComponent<NPC_Behavior>().wanderingRadius = collision.GetComponent<NPC_Behavior>().wanderingMaxRadius;
+            collision.GetComponent<NPC_Behavior>().fleePoint = fleeingPoint;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
