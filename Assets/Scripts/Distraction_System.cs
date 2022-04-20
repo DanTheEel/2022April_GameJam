@@ -20,7 +20,19 @@ public class Distraction_System : MonoBehaviour
             NPCs.Add(npc);
         }
     }
-    
+
+    private void Update()
+    {
+        int detectedNPCs = 0;
+        foreach(GameObject npc in NPCs)
+        {
+            if(npc.GetComponentInChildren<NPC_Detection>().isBeingDetected)
+            {
+                detectedNPCs++;
+            }
+        }
+    }
+
 
     public void ActivateDistraction(Transform distraction)
     {

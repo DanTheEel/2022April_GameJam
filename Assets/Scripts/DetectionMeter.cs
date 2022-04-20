@@ -19,6 +19,35 @@ public class DetectionMeter : MonoBehaviour
 
     public Image detectionMeterFill;
 
+    public List<GameObject> NPCs;
+    private void Start()
+    {
+        foreach (GameObject npc in GameObject.FindGameObjectsWithTag("NPC"))
+        {
+            NPCs.Add(npc);
+        }
+    }
+
+    private void Update()
+    {
+        int detectedNPCs = 0;
+        foreach (GameObject npc in NPCs)
+        {
+            if (npc.GetComponentInChildren<NPC_Detection>().isBeingDetected)
+            {
+                detectedNPCs++;
+            }
+        }
+        if (detectedNPCs > 0)
+        {
+            SetDetection(true);
+        }
+        else
+        {
+            SetDetection(false);
+        }
+    }
+
     public void SetDetection(bool isBeingDetected)
     {
         if (isBeingDetected)
