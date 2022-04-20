@@ -103,6 +103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  playerFootstepsAudioClipList:
+  - {fileID: 8300000, guid: e7f6616571c53fe429a5ea66bb998151, type: 3}
+  - {fileID: 8300000, guid: 3164d95a92e9f37448ea20ab4cdbc9f4, type: 3}
+  playerSoundsAudioSource: {fileID: 5683842545179966092}
+  currentFootstepSound: 1
 --- !u!61 &8189556221491697699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -272,6 +277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionCooldown: 0.25
+  nearestObjects: []
+  interactionUI: {fileID: 0}
 --- !u!58 &736664777
 CircleCollider2D:
   m_ObjectHideFlags: 0

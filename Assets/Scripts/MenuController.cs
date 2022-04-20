@@ -28,7 +28,7 @@ public class MenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        creditsPanel.SetActive(true);
+        SceneManager.LoadScene(1);
         menuAudioSource.PlayOneShot(menuForwardSelect);
     }
 
