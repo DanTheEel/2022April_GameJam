@@ -12,5 +12,4 @@ public class PlayerHidingSystem : MonoBehaviour
     }
 
     public bool hidden;
-
 }

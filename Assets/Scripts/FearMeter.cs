@@ -27,7 +27,6 @@ public class FearMeter : MonoBehaviour
         if (currentFear >= 100)
         {
             // win / end game !!!
-
         }
     }
 
