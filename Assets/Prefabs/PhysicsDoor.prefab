@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3130266009047094445}
   - component: {fileID: 1196155080904045330}
   - component: {fileID: 7790068793121913310}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PhysicsDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
