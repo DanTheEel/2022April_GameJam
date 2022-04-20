@@ -26,6 +26,7 @@ public class testInteraction : MonoBehaviour, IInteractable
         if (Waypoint_System.instance.GetCurrentRoom().interactables.Contains(this.gameObject))
         {
             Distraction_System.instance.ActivateDistraction(this.transform);
+            Distraction_System.instance.ActivateDistractionVisuals();
         }
 
     }

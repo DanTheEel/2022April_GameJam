@@ -54,11 +54,21 @@ public class Distraction_System : MonoBehaviour
             }
         }
     }
+
     public void ActivateJumpScare()
     {
         foreach (GameObject npc in NPCs)
         {
             npc.GetComponent<NPC_Behavior>().JumpScare();
+        }
+    }
+
+    public void ActivateDistractionVisuals()
+    {
+        foreach (GameObject npc in NPCs)
+        {
+            npc.GetComponent<NPC_Behavior>().npcVisualAnim.ResetTrigger("Exclamation");
+            npc.GetComponent<NPC_Behavior>().npcVisualAnim.SetTrigger("Exclamation");
         }
     }
 

@@ -22,6 +22,7 @@ public class PathFinding : MonoBehaviour
 
     int travelPoint = 1;
 
+    public bool pathfinding = true;
 
 
     public GameObject body;
@@ -48,37 +49,44 @@ public class PathFinding : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        //The code below is used to move the start object along the path to the end object.
-        if (endObj != null && grid != null && triggered)  //triggered is added as a condition to move.
+        if(pathfinding)
         {
-            // if in the same node, just move towards the target
-            if(SameNode(transform , endObj))
+            //The code below is used to move the start object along the path to the end object.
+            if (endObj != null && grid != null && triggered)  //triggered is added as a condition to move.
             {
-                myRB.AddForce(moveSpeed * 30 * (endObj.transform.position - transform.position));
-            }
-
-            if (startObj.position != endObj.position)
-                FindPath(startObj.position, endObj.position);
-            //else
-            if (path.Count > 1 && travelPoint <= path.Count)
-            {
-                //move towards target
-                if (grid.NodeFromWorldPoint(transform.position) == path[travelPoint])
+                // if in the same node, just move towards the target
+                if (SameNode(transform, endObj))
                 {
-                    travelPoint++;
+                    myRB.AddForce(moveSpeed * 30 * (endObj.transform.position - transform.position));
                 }
-                myRB.AddForce(moveSpeed * ((path[travelPoint].worldPosition) - transform.position));
+
+                if (startObj.position != endObj.position)
+                    FindPath(startObj.position, endObj.position);
+                //else
+                if (path.Count > 1 && travelPoint <= path.Count)
+                {
+                    //move towards target
+                    if (grid.NodeFromWorldPoint(transform.position) == path[travelPoint])
+                    {
+                        travelPoint++;
+                    }
+                    myRB.AddForce(moveSpeed * ((path[travelPoint].worldPosition) - transform.position));
+                }
+                else myRB.velocity = Vector2.zero;
             }
-            else myRB.velocity = Vector2.zero;
         }
+        else
+        {
+            myRB.AddForce(moveSpeed * (endObj.transform.position - transform.position));
+        }
+        
 
 
         // movement rotation
-        if(endObj != null && body != null)
+        /*if(endObj != null && body != null)
         {
             body.transform.up = Vector3.Lerp(body.transform.up, endObj.position - body.transform.position, rotationSpeed * Time.deltaTime);
-        }
+        }*/
 
 
     }

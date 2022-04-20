@@ -24,12 +24,18 @@ public class NPC_Behavior : MonoBehaviour
     public bool triggered = false;
     public float gatheringRadius = 3f;
 
+    public float idleTime = 2;  //seconds
+
     // color tests
     SpriteRenderer npcSR;
     public Color defaultColor;
     public Color triggeredColor;
     public Color distractedColor;
     public Color fleeingColor;
+
+    // NPC visual
+    public Animator npcVisualAnim;
+
 
     void Start()
     {
@@ -43,6 +49,7 @@ public class NPC_Behavior : MonoBehaviour
 
         npcSR = GetComponent<SpriteRenderer>();
         npcSR.color = defaultColor;
+
     }
 
     void Update()
@@ -101,9 +108,19 @@ public class NPC_Behavior : MonoBehaviour
    public void Distract(Transform distraction)
     {
         triggered = true;
+        npcSR.color = triggeredColor;
+
+        pathFinding.moveSpeed = 0;
         NPC_Target.position = distraction.position + (Random.insideUnitSphere * gatheringRadius);
 
-        npcSR.color = triggeredColor;
+        StartCoroutine(WaitBeforeInvestigating(distraction));
+    }
+
+    IEnumerator WaitBeforeInvestigating(Transform distraction)
+    {
+        yield return new WaitForSeconds(idleTime);
+
+        pathFinding.moveSpeed = defaultSpeed;
     }
 
     public void JumpScare()
@@ -111,9 +128,11 @@ public class NPC_Behavior : MonoBehaviour
         NPC_Target.position = fleePoint.position + (Random.insideUnitSphere * gatheringRadius);
         StartCoroutine(Flee());
     }
+    
 
     public IEnumerator Flee()
     {
+        pathFinding.pathfinding = true;
         pathFinding.moveSpeed = fleeSpeed;
 
         npcSR.color = fleeingColor;
@@ -122,6 +141,8 @@ public class NPC_Behavior : MonoBehaviour
         distracted = false;
         triggered = false;
         ResumePatrol();
+
+        npcVisualAnim.ResetTrigger("Exclamation");
     }
 
 }
