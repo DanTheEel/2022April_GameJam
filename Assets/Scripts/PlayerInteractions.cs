@@ -5,12 +5,15 @@ using System.Linq;
 public class PlayerInteractions : MonoBehaviour
 {
     public float interactionCooldown = 0.05f;
-    private List<GameObject> nearestObjects = new List<GameObject>();
+    public List<GameObject> nearestObjects = new List<GameObject>();
     //private float timeLeft;
     private GameObject closest;
+    public GameObject interactionUI;
+
     private void Start()
     {
         //timeLeft = interactionCooldown;
+        interactionUI.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -27,6 +30,7 @@ public class PlayerInteractions : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && closest != null)
         {
             closest.GetComponent<IInteractable>().interact();
+            Debug.Log("Interacted with object");
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +39,7 @@ public class PlayerInteractions : MonoBehaviour
         if (other.CompareTag("Interactable"))
         {          
             nearestObjects.Add(other.gameObject);
+            interactionUI.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -44,6 +49,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             nearestObjects.Remove(other.gameObject);
             closest = null;
+            interactionUI.SetActive(false);
         }
     }
 }

@@ -10,12 +10,17 @@ public class PlayerHide : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            isHiding = true;
+            PlayerHidingSystem.instance.hidden = true;
+            isHiding = true;            
         }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        isHiding = false;
+        if (other.gameObject.tag == "Player")
+        {
+            PlayerHidingSystem.instance.hidden = false;
+            isHiding = false;
+        }
     }
 }

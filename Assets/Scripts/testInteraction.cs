@@ -22,6 +22,8 @@ public class testInteraction : MonoBehaviour, IInteractable
         {
             GetComponent<SpriteRenderer>().color = Color.blue;
         }
+
+        Distraction_System.instance.ActivateDistraction(this.transform);
         
     }
     public void Start()

@@ -7,13 +7,21 @@ public class NPC_Detection : MonoBehaviour
     bool isBeingDetected = false;
     public NPC_Behavior npcBehavior;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
-            isBeingDetected = true;
+            if (!PlayerHidingSystem.instance.hidden)
+            {
+                isBeingDetected = true;
+            }
+            else
+            {
+                isBeingDetected = false;
+            }
         }
     }
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")

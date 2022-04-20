@@ -21,6 +21,7 @@ public class NPC_Behavior : MonoBehaviour
     public float fleeSpeed = 5;
 
     public bool distracted = false;
+    bool triggered = false;
     public float gatheringRadius = 3f;
 
     void Start()
@@ -36,8 +37,7 @@ public class NPC_Behavior : MonoBehaviour
 
     void Update()
     {
-
-        if(!distracted)
+        if(!triggered)
         {
             if (pathFinding.IsAtDestination())
             {
@@ -56,6 +56,13 @@ public class NPC_Behavior : MonoBehaviour
                 wandering = true;
                 waitingTimeLeft = waitingTime;
                 Wander();
+            }
+        }
+        else
+        {
+            if (pathFinding.IsAtDestination())
+            {
+                distracted = true;
             }
         }
        
@@ -80,7 +87,7 @@ public class NPC_Behavior : MonoBehaviour
 
    public void Distract(Transform distraction)
     {
-        distracted = true;
+        triggered = true;
         NPC_Target.position = distraction.position + (Random.insideUnitSphere * gatheringRadius);
     }
 
@@ -96,6 +103,7 @@ public class NPC_Behavior : MonoBehaviour
 
         yield return new WaitForSeconds(fleeingTime);
         distracted = false;
+        triggered = false;
         ResumePatrol();
     }
 
