@@ -5,15 +5,21 @@ using UnityEngine;
 public class PlayerJumpscare : MonoBehaviour
 {
     public float fearPerSpook = 25;
-    GameObject npcInRange = null;
+
+    List<GameObject> npcsInRange;
+
+    private void Start()
+    {
+        npcsInRange = new List<GameObject>();
+    }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(npcInRange != null)
+            if (npcsInRange.Count > 0)
             {
-                if(npcInRange.GetComponent<NPC_Behavior>().distracted)
+                if (Distraction_System.instance.AreTheyDistracted())
                 {
                     Waypoint_System.instance.currentWaypointIndex++;
                     FearMeter.instance.AddFear(fearPerSpook);
@@ -21,28 +27,23 @@ public class PlayerJumpscare : MonoBehaviour
                 }
             }
         }
-
-        if(npcInRange != null)
-        {
-            Debug.Log(npcInRange);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "NPC")
         {
-            if(npcInRange == null)
-            {
-                npcInRange = collision.gameObject;
-            }
+            npcsInRange.Add(collision.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "NPC")
         {
-            npcInRange = null;
+            npcsInRange.Remove(collision.gameObject);
         }
     }
+
+
+    
 }

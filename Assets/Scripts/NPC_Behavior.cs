@@ -21,8 +21,15 @@ public class NPC_Behavior : MonoBehaviour
     public float fleeSpeed = 5;
 
     public bool distracted = false;
-    bool triggered = false;
+    public bool triggered = false;
     public float gatheringRadius = 3f;
+
+    // color tests
+    SpriteRenderer npcSR;
+    public Color defaultColor;
+    public Color triggeredColor;
+    public Color distractedColor;
+    public Color fleeingColor;
 
     void Start()
     {
@@ -33,6 +40,9 @@ public class NPC_Behavior : MonoBehaviour
         NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
         basePosition = Waypoint_System.instance.GetCurrentWaypoint();
         pathFinding.moveSpeed = defaultSpeed;
+
+        npcSR = GetComponent<SpriteRenderer>();
+        npcSR.color = defaultColor;
     }
 
     void Update()
@@ -63,9 +73,10 @@ public class NPC_Behavior : MonoBehaviour
             if (pathFinding.IsAtDestination())
             {
                 distracted = true;
+                npcSR.color = distractedColor;
             }
         }
-       
+
     }
 
     public void Wander()
@@ -83,12 +94,16 @@ public class NPC_Behavior : MonoBehaviour
         pathFinding.moveSpeed = defaultSpeed;
         NPC_Target.position = Waypoint_System.instance.GetCurrentWaypoint();
         basePosition = Waypoint_System.instance.GetCurrentWaypoint();
+
+        npcSR.color = defaultColor;
     }
 
    public void Distract(Transform distraction)
     {
         triggered = true;
         NPC_Target.position = distraction.position + (Random.insideUnitSphere * gatheringRadius);
+
+        npcSR.color = triggeredColor;
     }
 
     public void JumpScare()
@@ -100,6 +115,8 @@ public class NPC_Behavior : MonoBehaviour
     public IEnumerator Flee()
     {
         pathFinding.moveSpeed = fleeSpeed;
+
+        npcSR.color = fleeingColor;
 
         yield return new WaitForSeconds(fleeingTime);
         distracted = false;

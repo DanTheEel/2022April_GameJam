@@ -21,24 +21,37 @@ public class Distraction_System : MonoBehaviour
         }
     }
 
-    private void Update()
+    public bool AreTheyDistracted()
     {
-        int detectedNPCs = 0;
-        foreach(GameObject npc in NPCs)
+        bool distracted = false;
+
+
+        foreach (GameObject npc in NPCs)
         {
-            if(npc.GetComponentInChildren<NPC_Detection>().isBeingDetected)
+            if (npc.GetComponent<NPC_Behavior>().distracted)
             {
-                detectedNPCs++;
+                distracted = true;
             }
         }
-    }
 
+        return distracted;
+    }
 
     public void ActivateDistraction(Transform distraction)
     {
+        if(AreTheyDistracted())
+        {
+            foreach (GameObject npc in NPCs)
+            {
+                npc.GetComponent<NPC_Behavior>().Distract(distraction);
+            }
+        }
         foreach(GameObject npc in NPCs)
         {
-            npc.GetComponent<NPC_Behavior>().Distract(distraction);
+            if(!npc.GetComponent<NPC_Behavior>().triggered)
+            {
+                npc.GetComponent<NPC_Behavior>().Distract(distraction);
+            }
         }
     }
     public void ActivateJumpScare()
@@ -47,5 +60,10 @@ public class Distraction_System : MonoBehaviour
         {
             npc.GetComponent<NPC_Behavior>().JumpScare();
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log("distracted " + AreTheyDistracted());
     }
 }

@@ -33,7 +33,7 @@ public class DetectionMeter : MonoBehaviour
         int detectedNPCs = 0;
         foreach (GameObject npc in NPCs)
         {
-            if (npc.GetComponentInChildren<NPC_Detection>().isBeingDetected)
+            if (npc.GetComponentInChildren<NPC_Detection>().isBeingDetected && !npc.GetComponent<NPC_Behavior>().distracted)
             {
                 detectedNPCs++;
             }
@@ -50,7 +50,7 @@ public class DetectionMeter : MonoBehaviour
 
     public void SetDetection(bool isBeingDetected)
     {
-        if (isBeingDetected)
+        if (isBeingDetected && !PlayerHidingSystem.instance.hidden)
         {
             if(detectionMeter < detectionDuration)
             {

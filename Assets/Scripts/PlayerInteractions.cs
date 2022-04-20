@@ -13,7 +13,7 @@ public class PlayerInteractions : MonoBehaviour
     private void Start()
     {
         //timeLeft = interactionCooldown;
-        interactionUI.SetActive(false);
+        //interactionUI.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -27,7 +27,7 @@ public class PlayerInteractions : MonoBehaviour
             var sorted = nearestObjects.OrderBy(obj => (obj.transform.position - transform.position).sqrMagnitude);
             closest = sorted.First();
         }
-        if (Input.GetKeyDown(KeyCode.E) && closest != null)
+        if (Input.GetKeyDown(KeyCode.E) && closest != null && !Distraction_System.instance.AreTheyDistracted())
         {
             closest.GetComponent<IInteractable>().interact();
             Debug.Log("Interacted with object");
@@ -39,7 +39,7 @@ public class PlayerInteractions : MonoBehaviour
         if (other.CompareTag("Interactable"))
         {          
             nearestObjects.Add(other.gameObject);
-            interactionUI.SetActive(true);
+            //interactionUI.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -49,7 +49,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             nearestObjects.Remove(other.gameObject);
             closest = null;
-            interactionUI.SetActive(false);
+            //interactionUI.SetActive(false);
         }
     }
 }
