@@ -7,6 +7,8 @@ public class DoorCloser : MonoBehaviour
     private float offset = 1;
     private float Speed;
     private new HingeJoint2D hingeJoint;
+    public AudioSource audioSource;
+    private bool hasPlayed = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class DoorCloser : MonoBehaviour
             motor.motorSpeed = Speed;
             hingeJoint.motor = motor;
 
+            hasPlayed = false;
+            //creeky door?
+
         }
         else if (hingeJoint.jointAngle > centerAngle + offset)
         {
@@ -40,12 +45,24 @@ public class DoorCloser : MonoBehaviour
             motor.motorSpeed = -Speed;
             hingeJoint.motor = motor;
 
+            hasPlayed = false;
+            //creeky door?
         }
         else
         {
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             hingeJoint.useMotor = false;
+            if(!audioSource.isPlaying && !hasPlayed)
+            {
+                audioSource.Play();
+                hasPlayed = true;
+            }
+               
         }
         //GetComponent<Rigidbody2D>().AddForceAtPosition(Vector2.one * forceStrength,GetComponent<HingeJoint2D>().anchor);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //play open clip?
     }
 }

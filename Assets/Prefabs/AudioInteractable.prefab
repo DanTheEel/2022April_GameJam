@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8100613454217425368}
   - component: {fileID: 7339192784599134634}
   - component: {fileID: 3213270934342210911}
+  - component: {fileID: 6833604339190627562}
   m_Layer: 0
   m_Name: AudioInteractable
   m_TagString: Interactable
@@ -124,6 +125,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 0}
+  FearAmount: 0
+  radius: 0
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!82 &3213270934342210911
 AudioSource:
   m_ObjectHideFlags: 0
@@ -220,3 +226,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &6833604339190627562
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043697679120252678}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
