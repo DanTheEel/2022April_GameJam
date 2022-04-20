@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerTopDownMovement : MonoBehaviour
 {
     public float speed;
+    [Tooltip("SoundOffset is based on seconds")]
+    public float soundOffset = 0.03f;
     public List<AudioClip> playerFootstepsAudioClipList;
     public AudioSource playerSoundsAudioSource;
     private Vector2 moveDirection;
-    public int currentFootstepSound;
+    private int currentFootstepSound;
+   
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -25,13 +28,14 @@ public class PlayerTopDownMovement : MonoBehaviour
         rb.velocity = moveDirection * speed;
         PlayFootstepSound();
     }
-
-    private void PlayFootstepSound()
+        
+    
+    public void PlayFootstepSound()
     {
-        if (moveDirection != Vector2.zero & !playerSoundsAudioSource.isPlaying)
+        if (rb.velocity != Vector2.zero & !playerSoundsAudioSource.isPlaying)
         {
             playerSoundsAudioSource.clip = GetFootstepClip();
-            playerSoundsAudioSource.Play();
+            playerSoundsAudioSource.PlayDelayed(playerFootstepsAudioClipList[currentFootstepSound].length + (soundOffset * rb.velocity.normalized.magnitude));
         }
     }
 
@@ -40,5 +44,4 @@ public class PlayerTopDownMovement : MonoBehaviour
         currentFootstepSound = Mathf.Abs(currentFootstepSound - 1);
         return playerFootstepsAudioClipList[currentFootstepSound];
     }
-    
 }
