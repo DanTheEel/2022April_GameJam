@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorCloser : MonoBehaviour
 {
+    private float offset = 1;
     private float Speed;
     private new HingeJoint2D hingeJoint;
     // Start is called before the first frame update
@@ -17,23 +18,26 @@ public class DoorCloser : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (transform.rotation.z < -0.01)
+        var centerAngle = (hingeJoint.limits.min + hingeJoint.limits.max) / 2;
+
+
+        if (hingeJoint.jointAngle < centerAngle - offset)
         {
            //Debug.Log("transform.rotation.eulerAngles.z < -0.1 " + (transform.rotation.z) + (transform.rotation.z < -0.1));
             hingeJoint.useMotor = true;
             var motor = hingeJoint.motor;
 
-            motor.motorSpeed = -Speed;
+            motor.motorSpeed = Speed;
             hingeJoint.motor = motor;
 
         }
-        else if (transform.rotation.z > 0.01)
+        else if (hingeJoint.jointAngle > centerAngle + offset)
         {
-           // Debug.Log("transform.rotation.z > 0.1 " + (transform.rotation.z) + (transform.rotation.z > 0.1));
+            //Debug.Log("transform.rotation.z > 0.1 " + (transform.rotation.z) + (transform.rotation.z > 0.1));
             hingeJoint.useMotor = true;
             var motor = hingeJoint.motor;
 
-            motor.motorSpeed = Speed;
+            motor.motorSpeed = -Speed;
             hingeJoint.motor = motor;
 
         }
