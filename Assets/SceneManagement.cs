@@ -7,6 +7,11 @@ public class SceneManagement : MonoBehaviour
 {
     public void LoadMainScene()
     {
-        SceneManager.LoadScene("Cole_Test");
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
