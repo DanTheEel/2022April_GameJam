@@ -11,6 +11,8 @@ public class PlayerTopDownMovement : MonoBehaviour
     public AudioSource playerSoundsAudioSource;
     private Vector2 moveDirection;
     private int currentFootstepSound;
+
+    private bool isMoving = false;
    
 
     private Rigidbody2D rb;
@@ -26,7 +28,25 @@ public class PlayerTopDownMovement : MonoBehaviour
         moveDirection = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
         rb.velocity = moveDirection * speed;
-        PlayFootstepSound();
+        if(rb.velocity.x != 0 || rb.velocity.y != 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+        if (isMoving)
+        {
+            if (!playerSoundsAudioSource.isPlaying)
+            {
+                playerSoundsAudioSource.Play();
+            }
+            else
+            {
+                playerSoundsAudioSource.Stop();
+            }
+        }
     }
         
     

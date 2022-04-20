@@ -27,7 +27,7 @@ public class PlayerInteractions : MonoBehaviour
             var sorted = nearestObjects.OrderBy(obj => (obj.transform.position - transform.position).sqrMagnitude);
             closest = sorted.First();
         }
-        if (Input.GetKeyDown(KeyCode.E) && closest != null && !Distraction_System.instance.AreTheyDistracted())
+        if (Input.GetKeyDown(KeyCode.E) /*&& closest != null && !Distraction_System.instance.AreTheyDistracted()*/)
         {
             closest.GetComponent<IInteractable>().interact();
             Debug.Log("Interacted with object");
