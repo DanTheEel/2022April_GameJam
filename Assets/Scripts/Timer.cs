@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -10,16 +9,16 @@ public class Timer : MonoBehaviour
     private float oneMinuteLeft;
     public Text timeText;
     public AudioSource oneMinuteLeftSound;
-    
+    public GameObject gameOverCanvas;
 
     private void Awake()
     {
-        
+        gameOverCanvas.SetActive(false);
     }
 
     private void Start()
     {
-        oneMinuteLeft = timeValue - 66;
+        oneMinuteLeft = timeValue - 60;
         oneMinuteLeftSound.PlayDelayed(oneMinuteLeft);
     }
 
@@ -32,12 +31,8 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            
             timeValue = 0;
-            SceneManager.LoadScene(2);
-
-
-
+            gameOverCanvas.SetActive(true);
         }
 
         DisplayTime(timeValue);
