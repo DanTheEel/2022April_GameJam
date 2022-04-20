@@ -6639,7 +6639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0626265f5d17a3a49a1cda90b2ac40bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 5
+  timeValue: 360
   timeText: {fileID: 780084459}
   oneMinuteLeftSound: {fileID: 1988288647}
   gameOverCanvas: {fileID: 556207461}
