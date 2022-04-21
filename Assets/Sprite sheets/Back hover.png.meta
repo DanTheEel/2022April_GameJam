@@ -1,12 +1,69 @@
 fileFormatVersion: 2
 guid: a8246de2cc1d27d4da6eb4d26522d38b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5259965393022388170
+    second: Back hover_0
+  - first:
+      213: -5933618172940459884
+    second: Back hover_1
+  - first:
+      213: 2662028095286210410
+    second: Back hover_2
+  - first:
+      213: 7823913590702810913
+    second: Back hover_3
+  - first:
+      213: 5306696805635462095
+    second: Back hover_4
+  - first:
+      213: -8034396434079070606
+    second: Back hover_5
+  - first:
+      213: -7271855606686800941
+    second: Back hover_6
+  - first:
+      213: 2158924892369401355
+    second: Back hover_7
+  - first:
+      213: -6227190098406495068
+    second: Back hover_8
+  - first:
+      213: 251820822094496938
+    second: Back hover_9
+  - first:
+      213: -6778253087033534769
+    second: Back hover_10
+  - first:
+      213: 5080011155765737736
+    second: Back hover_11
+  - first:
+      213: -6009377574409118926
+    second: Back hover_12
+  - first:
+      213: -9720532950218111
+    second: Back hover_13
+  - first:
+      213: 6030176316706131581
+    second: Back hover_14
+  - first:
+      213: -6577372859610951431
+    second: Back hover_15
+  - first:
+      213: 5983703447576823229
+    second: Back hover_16
+  - first:
+      213: -5081497606997418756
+    second: Back hover_17
+  - first:
+      213: -3804769713756148787
+    second: Back hover_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -32,27 +89,27 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -75,13 +132,436 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Back hover_0
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 88
+        width: 385
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6387d02f759d007b0800000000000000
+      internalID: -5259965393022388170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_1
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 88
+        width: 380
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490e41995bd87ada0800000000000000
+      internalID: -5933618172940459884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_2
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 88
+        width: 380
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6fe4a9d27c61f420800000000000000
+      internalID: 2662028095286210410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_3
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 88
+        width: 385
+        height: 946
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127213735ff149c60800000000000000
+      internalID: 7823913590702810913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_4
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 93
+        width: 385
+        height: 945
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc31a9ee0ac25a940800000000000000
+      internalID: 5306696805635462095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_5
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 97
+        width: 385
+        height: 951
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2764d02e207108090800000000000000
+      internalID: -8034396434079070606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_6
+      rect:
+        serializedVersion: 2
+        x: 3066
+        y: 107
+        width: 381
+        height: 950
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d320898add251b90800000000000000
+      internalID: -7271855606686800941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_7
+      rect:
+        serializedVersion: 2
+        x: 3567
+        y: 125
+        width: 381
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b063d6a40ca06fd10800000000000000
+      internalID: 2158924892369401355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_8
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 130
+        width: 385
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aca6ab39939499a0800000000000000
+      internalID: -6227190098406495068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_9
+      rect:
+        serializedVersion: 2
+        x: 4564
+        y: 116
+        width: 385
+        height: 950
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa44df714b5ae7300800000000000000
+      internalID: 251820822094496938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_10
+      rect:
+        serializedVersion: 2
+        x: 5065
+        y: 125
+        width: 381
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc6dba5eabecee1a0800000000000000
+      internalID: -6778253087033534769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_11
+      rect:
+        serializedVersion: 2
+        x: 5566
+        y: 125
+        width: 381
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809307a2b33df7640800000000000000
+      internalID: 5080011155765737736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_12
+      rect:
+        serializedVersion: 2
+        x: 6067
+        y: 121
+        width: 381
+        height: 940
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b55246fe66a9ca0800000000000000
+      internalID: -6009377574409118926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_13
+      rect:
+        serializedVersion: 2
+        x: 6564
+        y: 116
+        width: 385
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a897e0a377ddff0800000000000000
+      internalID: -9720532950218111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_14
+      rect:
+        serializedVersion: 2
+        x: 7065
+        y: 102
+        width: 385
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e0e3a296d7fa350800000000000000
+      internalID: 6030176316706131581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_15
+      rect:
+        serializedVersion: 2
+        x: 7566
+        y: 93
+        width: 380
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0189b8b3a78b4a0800000000000000
+      internalID: -6577372859610951431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_16
+      rect:
+        serializedVersion: 2
+        x: 8067
+        y: 88
+        width: 380
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5c81225926a0350800000000000000
+      internalID: 5983703447576823229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_17
+      rect:
+        serializedVersion: 2
+        x: 8563
+        y: 88
+        width: 385
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcdbef69d4ea79b0800000000000000
+      internalID: -5081497606997418756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back hover_18
+      rect:
+        serializedVersion: 2
+        x: 9064
+        y: 88
+        width: 385
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb66679a1eb23bc0800000000000000
+      internalID: -3804769713756148787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
