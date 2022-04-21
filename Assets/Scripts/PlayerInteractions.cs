@@ -29,7 +29,9 @@ public class PlayerInteractions : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E) /*&& closest != null && !Distraction_System.instance.AreTheyDistracted()*/)
         {
-            closest.GetComponent<IInteractable>().interact();
+            IInteractable IInteract;
+            if(closest.TryGetComponent<IInteractable>(out IInteract))
+                IInteract.interact();
             Debug.Log("Interacted with object");
         }
     }
