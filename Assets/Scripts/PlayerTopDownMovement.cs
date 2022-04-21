@@ -11,25 +11,37 @@ public class PlayerTopDownMovement : MonoBehaviour
     public AudioSource playerSoundsAudioSource;
     private Vector2 moveDirection;
     private int currentFootstepSound;
-   
 
+    private Animator animator;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moveDirection = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+        moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         rb.velocity = moveDirection * speed;
         PlayFootstepSound();
+        if(rb.velocity.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {   
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        animator.SetBool("MovingSide", rb.velocity.x != 0);
+        animator.SetBool("MovingDown", rb.velocity.y < 0);
+        animator.SetBool("isMoving", rb.velocity != Vector2.zero);
     }
-        
-    
+
+
     public void PlayFootstepSound()
     {
         if (rb.velocity != Vector2.zero & !playerSoundsAudioSource.isPlaying)
