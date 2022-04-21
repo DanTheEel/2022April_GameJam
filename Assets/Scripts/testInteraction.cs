@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class testInteraction : MonoBehaviour, IInteractable
 {
+    public AnimationTrigger anim;
+
     public ParticleSystem particle;
     private bool isTriggered = false;
     private bool activeScare = false;
@@ -30,6 +32,7 @@ public class testInteraction : MonoBehaviour, IInteractable
         {
             if (!activeScare)
             {
+                anim.SetAnimation();
                 StartCoroutine(PlayParticles());
                 activeScare = true;
             }

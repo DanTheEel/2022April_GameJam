@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator anim;
+
+    public void SetAnimation()
     {
-        
+        StartCoroutine(AnimationTimer());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator AnimationTimer()
     {
-        
+        anim.SetBool("TriggerAnimation 0", true);
+        yield return new WaitForSeconds(5f);
+
+        anim.SetBool("TriggerAnimation 0", false);
     }
+    
 }
