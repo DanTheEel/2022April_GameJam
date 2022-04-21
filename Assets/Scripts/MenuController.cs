@@ -54,7 +54,7 @@ public class MenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
         PositiveActionSFX();
         GameIsPaused = false;
         Time.timeScale = 1f;
@@ -103,11 +103,16 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    public void Retry()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void QuitConfirmationPanel() 
     {
-                quitPanel.SetActive(true);
-                Time.timeScale = 0;
-                PositiveActionSFX();
+        quitPanel.SetActive(true);
+        Time.timeScale = 0;
+        PositiveActionSFX();
     }
 
     public void QuitCancel()
