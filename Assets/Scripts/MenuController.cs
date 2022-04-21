@@ -94,6 +94,9 @@ public class MenuController : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(1);
+        GameIsPaused = false;
+        Time.timeScale = 1f;
+        PositiveActionSFX();
     }
 
     public void QuitConfirmationPanel() 
