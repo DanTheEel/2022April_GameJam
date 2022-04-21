@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
         if(win)
         {
             blackscreen.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(blackscreen.GetComponent<CanvasGroup>().alpha, 1, Time.deltaTime * 0.5f);
+
+            if(blackscreen.GetComponent<CanvasGroup>().alpha < 0.1f)
+            {
+                // mainmenu scene
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
