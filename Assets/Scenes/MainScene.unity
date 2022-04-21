@@ -1345,7 +1345,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &234639807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,7 +3309,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &621136499
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,7 +4044,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!198 &721327299 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5519651311417849698, guid: 9b754743db7007347af340dbe94b48b1, type: 3}
@@ -5325,7 +5325,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &951342277
 GameObject:
   m_ObjectHideFlags: 0
@@ -6537,7 +6537,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &1182220055 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7857538612524202034, guid: 483a4fa762af41f4cbed744641b6e706, type: 3}
@@ -7111,7 +7111,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &1247740996
 GameObject:
   m_ObjectHideFlags: 0
@@ -7280,7 +7280,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &1284327242
 GameObject:
   m_ObjectHideFlags: 0
@@ -8658,7 +8658,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &1480129348
 GameObject:
   m_ObjectHideFlags: 0
@@ -10409,7 +10409,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1001 &1827437208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10784,7 +10784,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1001 &1972506359
 PrefabInstance:
   m_ObjectHideFlags: 0
