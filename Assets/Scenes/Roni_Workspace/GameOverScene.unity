@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.09411765, g: 0.09411765, b: 0.09411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1322,6 +1322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitPanel: {fileID: 0}
   creditsPanel: {fileID: 0}
+  pauseMenuPanel: {fileID: 0}
   menuForwardSelect: {fileID: 8300000, guid: 90df7890c648db74da4de62bd8260112, type: 3}
   menuBackSelect: {fileID: 8300000, guid: f5a47b146cc9e1940b6da39b25f97e1a, type: 3}
   menuAudioSource: {fileID: 1361499646}
