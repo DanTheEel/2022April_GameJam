@@ -208,7 +208,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -2.13, y: 0}
-  m_ConnectedAnchor: {x: 0.5009174, y: -0.03862381}
+  m_ConnectedAnchor: {x: 17.29257, y: -5.742464}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 50
@@ -277,7 +277,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 5
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
   - {x: -2.0877712, y: 0.2836265, z: 0}
   m_ShapePathHash: 923880488
   m_Mesh: {fileID: 0}
-  m_InstanceId: -985222
+  m_InstanceId: 211402
 --- !u!1 &7634571322882415553
 GameObject:
   m_ObjectHideFlags: 0
