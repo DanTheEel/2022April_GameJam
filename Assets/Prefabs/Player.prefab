@@ -48,7 +48,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
 --- !u!114 &6289534190815995840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +183,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e7f6616571c53fe429a5ea66bb998151, type: 3}
   - {fileID: 8300000, guid: 3164d95a92e9f37448ea20ab4cdbc9f4, type: 3}
   playerSoundsAudioSource: {fileID: 5683842545179966092}
-  currentFootstepSound: 1
 --- !u!61 &8189556221491697699
 BoxCollider2D:
   m_ObjectHideFlags: 0
