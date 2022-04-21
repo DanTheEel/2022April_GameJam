@@ -11,7 +11,7 @@ public class PlayerTopDownMovement : MonoBehaviour
     public AudioSource playerSoundsAudioSource;
     private Vector2 moveDirection;
     private int currentFootstepSound;
-
+    private bool isMoving = false;
     private Animator animator;
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -39,6 +39,25 @@ public class PlayerTopDownMovement : MonoBehaviour
         animator.SetBool("MovingSide", rb.velocity.x != 0);
         animator.SetBool("MovingDown", rb.velocity.y < 0);
         animator.SetBool("isMoving", rb.velocity != Vector2.zero);
+        if(rb.velocity.x != 0 || rb.velocity.y != 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+        if (isMoving)
+        {
+            if (!playerSoundsAudioSource.isPlaying)
+            {
+                playerSoundsAudioSource.Play();
+            }
+            else
+            {
+                playerSoundsAudioSource.Stop();
+            }
+        }
     }
 
 

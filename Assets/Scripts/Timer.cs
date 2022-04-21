@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public float timeValue;
     private float oneMinuteLeft;
     public Text timeText;
     public AudioSource oneMinuteLeftSound;
-    public GameObject gameOverCanvas;
+    
 
     private void Awake()
     {
-        gameOverCanvas.SetActive(false);
+        
     }
 
     private void Start()
@@ -32,7 +32,8 @@ public class Timer : MonoBehaviour
         else
         {
             timeValue = 0;
-            gameOverCanvas.SetActive(true);
+            SceneManager.LoadScene(2);
+            
         }
 
         DisplayTime(timeValue);

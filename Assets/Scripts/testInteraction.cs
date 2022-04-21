@@ -4,6 +4,33 @@ using UnityEngine;
 
 public class testInteraction : MonoBehaviour, IInteractable
 {
+    public ParticleSystem particle;
+    private bool isTriggered = false;
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            isTriggered = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isTriggered = false;
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isTriggered)
+        {
+            particle.Play();
+        }
+    }
+
     public void interact()
     {
         //do something
