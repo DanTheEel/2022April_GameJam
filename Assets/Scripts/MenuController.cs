@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
 {
     public GameObject quitPanel;
     public GameObject creditsPanel;
+    public GameObject pauseMenuPanel;
     public AudioClip menuForwardSelect;
     public AudioClip menuBackSelect;
     public AudioSource menuAudioSource;
@@ -18,14 +19,10 @@ public class MenuController : MonoBehaviour
     {
         quitPanel.SetActive(false);
         creditsPanel.SetActive(false);
+        pauseMenuPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
   
     public void ReturnToMenu()
     {
@@ -39,7 +36,7 @@ public class MenuController : MonoBehaviour
         menuAudioSource.PlayOneShot(menuForwardSelect);
     }
 
-
+   
     public void OpenCreditsPanel()
     {
         creditsPanel.SetActive(true);
