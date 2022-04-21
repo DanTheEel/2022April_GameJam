@@ -415,6 +415,9 @@ MonoBehaviour:
   isBeingDetected: 0
   npcBehavior: {fileID: 9196375020415845166}
   Cone: {fileID: 3020620322540502813}
+  canDetect:
+    serializedVersion: 2
+    m_Bits: 1855
 --- !u!60 &3020620322540502813
 PolygonCollider2D:
   m_ObjectHideFlags: 0
