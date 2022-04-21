@@ -40,9 +40,17 @@ public class PlayerTopDownMovement : MonoBehaviour
         {   
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        animator.SetBool("MovingSide", rb.velocity.x != 0);
-        animator.SetBool("MovingDown", rb.velocity.y < 0);
+        
         animator.SetBool("isMoving", rb.velocity != Vector2.zero);
+        if(rb.velocity != Vector2.zero)
+        {
+            animator.SetBool("MovingSide", rb.velocity.x != 0);
+            animator.SetBool("MovingDown", rb.velocity.y < 0);
+        }
+        else
+        {
+            animator.SetBool("MovingDown", true);
+        }
     }
 
 

@@ -85,7 +85,7 @@ public class PathFinding : MonoBehaviour
         //movement rotation
         if(endObj != null && body != null)
         {
-            body.transform.up = Vector3.Lerp(body.transform.up, endObj.position - body.transform.position, rotationSpeed * Time.deltaTime);
+            body.transform.up = Vector2.Lerp(body.transform.up, endObj.position - body.transform.position, rotationSpeed * Time.deltaTime);
         }
 
 
