@@ -27,6 +27,22 @@ public class PlayerJumpscare : MonoBehaviour
                 }
             }
         }
+        if(npcsInRange.Count > 0)
+        {
+            if(Distraction_System.instance.AreTheyDistracted())
+            {
+                InteractionUI.instance.SetText("Scare \nE", true);
+
+            }
+            else
+            {
+                InteractionUI.instance.SetText("Scare \nE", false);
+            }
+        }
+        else
+        {
+            InteractionUI.instance.SetText("Scare \nE", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

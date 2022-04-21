@@ -34,6 +34,15 @@ public class PlayerInteractions : MonoBehaviour
                 IInteract.interact();
             Debug.Log("Interacted with object");
         }
+
+        if(closest != null)
+        {
+            InteractionUI.instance.SetText("E", true);
+        }
+        else
+        {
+            InteractionUI.instance.SetText("E", false);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
