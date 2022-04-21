@@ -14,32 +14,28 @@ public class NPC_Detection : MonoBehaviour
             if (!PlayerHidingSystem.instance.hidden)
             {
                 isBeingDetected = true;
-
-                Debug.Log("YO we hit got spoted");
             }
             else
             {
                 isBeingDetected = false;
-
-                Debug.Log("YO we hit got spoted");
             }
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D collision)
-    {        
+    {
         if (collision.tag == "Player")
         {
             isBeingDetected = false;
-            Debug.Log("YO we hit got spoted");
-        }        
+
+        }
     }
 
     private bool isPlayerFirst(Vector2 otherPoint)
     {
         Vector2 thisV2Pos = new Vector2(this.transform.position.x, this.transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, (otherPoint - thisV2Pos).normalized, 7);
-        Debug.DrawRay(this.transform.position, (otherPoint - thisV2Pos).normalized * 7,Color.red, 0.5f);
+        Debug.DrawRay(this.transform.position, (otherPoint - thisV2Pos).normalized * 7, Color.red, 0.5f);
         Debug.Log($"did i hit the player... {hit.transform.CompareTag("Player")}");
         return (hit.transform.CompareTag("Player"));
     }
