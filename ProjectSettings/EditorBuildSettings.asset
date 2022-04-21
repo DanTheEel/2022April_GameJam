@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Roni_Workspace/GameOverScene.unity
     guid: 60655827ac6fced449a2dc0fe5ccb27f
+  - enabled: 1
+    path: Assets/Scenes/Roni_Workspace/Opening Narrative.unity
+    guid: f91b546a5fc04b94997d89dcfe4558d1
   m_configObjects: {}

@@ -1609,10 +1609,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1678,6 +1678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitPanel: {fileID: 1977976344}
   creditsPanel: {fileID: 298478451}
+  pauseMenuPanel: {fileID: 0}
   menuForwardSelect: {fileID: 8300000, guid: 90df7890c648db74da4de62bd8260112, type: 3}
   menuBackSelect: {fileID: 8300000, guid: f5a47b146cc9e1940b6da39b25f97e1a, type: 3}
   menuAudioSource: {fileID: 185510436}
