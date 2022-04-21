@@ -27,6 +27,15 @@ public class FearMeter : MonoBehaviour
         if (currentFear >= 100)
         {
             // win / end game !!!
+            GameManager.instance.WinGame();
+
+            Waypoint_System.instance.currentWaypointIndex = 4;
+            foreach (GameObject npc in GameObject.FindGameObjectsWithTag("NPC"))
+            {
+                npc.GetComponent<NPC_Behavior>().ResumePatrol();
+                npc.GetComponent<PathFinding>().pathfinding = true;
+                npc.GetComponent<PathFinding>().moveSpeed = npc.GetComponent<NPC_Behavior>().fleeSpeed;
+            }
         }
     }
 
@@ -39,6 +48,9 @@ public class FearMeter : MonoBehaviour
 
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            FearMeter.instance.AddFear(25);
+        }
     }
 }

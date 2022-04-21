@@ -11,9 +11,22 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    public GameObject blackscreen;
+    bool win = false;
+
+    private void Update()
+    {
+        if(win)
+        {
+            blackscreen.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(blackscreen.GetComponent<CanvasGroup>().alpha, 1, Time.deltaTime * 0.5f);
+        }
+    }
+
     public void WinGame()
     {
+        win = true;
 
+        Camera.main.gameObject.GetComponent<CameraFollower>().target = GameObject.FindGameObjectsWithTag("NPC")[0].transform;
     }
 
     public void LoseGame()
