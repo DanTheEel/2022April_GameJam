@@ -36,17 +36,17 @@ public class PlayerJumpscare : MonoBehaviour
         {
             if(Distraction_System.instance.AreTheyDistracted())
             {
-                InteractionUI.instance.SetText("Scare \nE", true);
+                InteractionUI.instance.SetText("F", true);
 
             }
             else
             {
-                InteractionUI.instance.SetText("Scare \nE", false);
+                InteractionUI.instance.SetText("F", false);
             }
         }
         else
         {
-            InteractionUI.instance.SetText("Scare \nE", false);
+            InteractionUI.instance.SetText("F", false);
         }
     }
 

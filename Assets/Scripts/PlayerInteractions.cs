@@ -35,14 +35,18 @@ public class PlayerInteractions : MonoBehaviour
             Debug.Log("Interacted with object");
         }
 
-        if(closest != null)
+        if(!Distraction_System.instance.AreTheyDistracted())
         {
-            InteractionUI.instance.SetText("E", true);
+            if (closest != null)
+            {
+                InteractionUI.instance.SetText("E", true);
+            }
+            else
+            {
+                InteractionUI.instance.SetText("E", false);
+            }
         }
-        else
-        {
-            InteractionUI.instance.SetText("E", false);
-        }
+        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
