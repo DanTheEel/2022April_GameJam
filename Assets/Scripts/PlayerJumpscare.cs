@@ -8,6 +8,8 @@ public class PlayerJumpscare : MonoBehaviour
 
     List<GameObject> npcsInRange;
 
+    public Animator jumpscareAnim;
+
     private void Start()
     {
         npcsInRange = new List<GameObject>();
@@ -26,6 +28,7 @@ public class PlayerJumpscare : MonoBehaviour
                     Distraction_System.instance.ActivateJumpScare();
 
                     Camera.main.gameObject.GetComponent<Animator>().SetTrigger("Shake");
+                    jumpscareAnim.SetTrigger("Jumpscare");
                 }
             }
         }

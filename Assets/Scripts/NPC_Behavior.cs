@@ -37,6 +37,7 @@ public class NPC_Behavior : MonoBehaviour
 
     // NPC visual
     public Animator npcVisualAnim;
+    public Animator jumpscareAnim;
 
 
     void Start()
@@ -147,6 +148,7 @@ public class NPC_Behavior : MonoBehaviour
 
         npcVisualAnim.ResetTrigger("Exclamation");
         Camera.main.gameObject.GetComponent<Animator>().ResetTrigger("Shake");
+        jumpscareAnim.ResetTrigger("Jumpscare");
 
     }
 
