@@ -60,6 +60,8 @@ public class DetectionMeter : MonoBehaviour
             {
                 // you are detected
                 Debug.Log("THEY SAW YOUUU!!!");
+
+                GameManager.instance.LoseGame();
             }
         }
         else
