@@ -15,6 +15,8 @@ public class MenuController : MonoBehaviour
     public AudioClip menuBackSelect;
     public AudioSource menuAudioSource;
 
+    private bool isPaused = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -73,25 +75,39 @@ public class MenuController : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuPanel.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-        NegativeActionSFX();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                isPaused = false;
+                pauseMenuPanel.SetActive(false);
+                Time.timeScale = 1f;
+                GameIsPaused = false;
+                NegativeActionSFX();
+            }
+        }
     }
 
     public void Paused()
     {
-        pauseMenuPanel.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-        PositiveActionSFX();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+            isPaused = true;
+            pauseMenuPanel.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+            PositiveActionSFX();
+            }
+        }
     }
 
     public void QuitConfirmationPanel() 
     {
-        quitPanel.SetActive(true);
-        Time.timeScale = 0;
-        PositiveActionSFX();
+                quitPanel.SetActive(true);
+                Time.timeScale = 0;
+                PositiveActionSFX();
     }
 
     public void QuitCancel()
