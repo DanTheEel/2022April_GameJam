@@ -46,11 +46,5 @@ public class FearMeter : MonoBehaviour
         fearMeterFill.fillAmount = currentFear / maxFear;
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            FearMeter.instance.AddFear(25);
-        }
-    }
+    
 }

@@ -25,6 +25,12 @@ public class AudioInteraction : MonoBehaviour, IInteractable
         {
             Distraction_System.instance.ActivateDistraction(this.transform);
             Distraction_System.instance.ActivateDistractionVisuals();
+            anim.SetAnimation();
+            if(particle != null)
+            {
+                StartCoroutine(PlayParticles());
+            }
+            activeScare = true;
         }
     }
 
