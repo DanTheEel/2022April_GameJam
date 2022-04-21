@@ -70,7 +70,7 @@ public class PathFinding : MonoBehaviour
                     {
                         travelPoint++;
                     }
-                    myRB.AddForce(moveSpeed * ((path[travelPoint].worldPosition) - transform.position));
+                    myRB.AddForce(moveSpeed * ((path[travelPoint].worldPosition) - transform.position));                
                 }
                 else myRB.velocity = Vector2.zero;
             }
@@ -79,14 +79,14 @@ public class PathFinding : MonoBehaviour
         {
             myRB.AddForce(moveSpeed * (endObj.transform.position - transform.position));
         }
-        
 
 
-        // movement rotation
-        /*if(endObj != null && body != null)
+
+        //movement rotation
+        if(endObj != null && body != null)
         {
             body.transform.up = Vector3.Lerp(body.transform.up, endObj.position - body.transform.position, rotationSpeed * Time.deltaTime);
-        }*/
+        }
 
 
     }
