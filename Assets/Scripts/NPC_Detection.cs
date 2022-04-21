@@ -28,7 +28,7 @@ public class NPC_Detection : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision)
     {        
-        if (collision.tag == "Player" && isPlayerFirst(collision.ClosestPoint(this.transform.position)))
+        if (collision.tag == "Player")
         {
             isBeingDetected = false;
             Debug.Log("YO we hit got spoted");
