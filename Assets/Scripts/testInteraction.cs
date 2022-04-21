@@ -6,6 +6,7 @@ public class testInteraction : MonoBehaviour, IInteractable
 {
     public ParticleSystem particle;
     private bool isTriggered = false;
+    private bool activeScare = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,8 +28,25 @@ public class testInteraction : MonoBehaviour, IInteractable
     {
         if (Input.GetKeyDown(KeyCode.Space) && isTriggered)
         {
-            particle.Play();
+            if (!activeScare)
+            {
+                StartCoroutine(PlayParticles());
+                activeScare = true;
+            }
+            if (activeScare)
+            {
+                Debug.Log("You currently have an active scare! Wait until it is finished.");
+            }
         }
+    }
+
+    IEnumerator PlayParticles()
+    {
+        particle.Play();
+        yield return new WaitForSeconds(5f);
+
+        particle.Stop();
+        activeScare = false;
     }
 
     public void interact()
