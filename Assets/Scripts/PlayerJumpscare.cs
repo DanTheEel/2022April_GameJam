@@ -8,6 +8,9 @@ public class PlayerJumpscare : MonoBehaviour
 
     List<GameObject> npcsInRange;
 
+    
+    public AudioSource vampireJumpScareAudioSource;
+
     public Animator jumpscareAnim;
 
     private void Start()
@@ -29,6 +32,7 @@ public class PlayerJumpscare : MonoBehaviour
 
                     Camera.main.gameObject.GetComponent<Animator>().SetTrigger("Shake");
                     jumpscareAnim.SetTrigger("Jumpscare");
+                    vampireJumpScareAudioSource.Play();
                 }
             }
         }
