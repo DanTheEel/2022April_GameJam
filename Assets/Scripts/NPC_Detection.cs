@@ -41,7 +41,7 @@ public class NPC_Detection : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, (otherPoint - thisV2Pos).normalized, 7);
         Debug.DrawRay(this.transform.position, (otherPoint - thisV2Pos).normalized * 7,Color.red, 0.5f);
         Debug.Log($"did i hit the player... {hit.transform.CompareTag("Player")}");
-        return (hit.transform.CompareTag("Player") && Cone.OverlapPoint(otherPoint));
+        return (hit.transform.CompareTag("Player"));
     }
 
 
