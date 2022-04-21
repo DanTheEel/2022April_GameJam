@@ -146,6 +146,8 @@ public class NPC_Behavior : MonoBehaviour
         ResumePatrol();
 
         npcVisualAnim.ResetTrigger("Exclamation");
+        Camera.main.gameObject.GetComponent<Animator>().ResetTrigger("Shake");
+
     }
 
 }

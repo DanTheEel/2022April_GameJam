@@ -24,6 +24,8 @@ public class PlayerJumpscare : MonoBehaviour
                     Waypoint_System.instance.currentWaypointIndex++;
                     FearMeter.instance.AddFear(fearPerSpook);
                     Distraction_System.instance.ActivateJumpScare();
+
+                    Camera.main.gameObject.GetComponent<Animator>().SetTrigger("Shake");
                 }
             }
         }
