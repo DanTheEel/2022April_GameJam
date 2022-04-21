@@ -19882,6 +19882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitPanel: {fileID: 0}
   creditsPanel: {fileID: 0}
+  pauseMenuPanel: {fileID: 0}
   menuForwardSelect: {fileID: 8300000, guid: 90df7890c648db74da4de62bd8260112, type: 3}
   menuBackSelect: {fileID: 8300000, guid: f5a47b146cc9e1940b6da39b25f97e1a, type: 3}
   menuAudioSource: {fileID: 556207465}
