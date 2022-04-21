@@ -75,31 +75,19 @@ public class MenuController : MonoBehaviour
 
     public void Resume()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-            {
-                isPaused = false;
-                pauseMenuPanel.SetActive(false);
-                Time.timeScale = 1f;
-                GameIsPaused = false;
-                NegativeActionSFX();
-            }
-        }
+        pauseMenuPanel.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        NegativeActionSFX();
     }
 
     public void Paused()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isPaused)
-            {
-            isPaused = true;
             pauseMenuPanel.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;
             PositiveActionSFX();
-            }
         }
     }
 
