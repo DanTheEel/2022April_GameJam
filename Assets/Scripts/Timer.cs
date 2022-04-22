@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     private float oneMinuteLeft;
     public Text timeText;
     public AudioSource oneMinuteLeftSound;
+    public bool gameWon = false;
     
 
     private void Awake()
@@ -25,18 +26,21 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeValue > 0)
+        if (!gameWon)
         {
-            timeValue -= Time.deltaTime;
-        }
-        else
-        {
-            timeValue = 0;
-            SceneManager.LoadScene(2);
-            
-        }
+            if (timeValue > 0)
+            {
+                timeValue -= Time.deltaTime;
+            }
+            else
+            {
+                timeValue = 0;
+                SceneManager.LoadScene(2);
 
-        DisplayTime(timeValue);
+            }
+
+            DisplayTime(timeValue);
+        }
     }
 
     void DisplayTime(float timeToDisplay)

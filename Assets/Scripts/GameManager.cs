@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Timer timerScript;
     private void Awake()
     {
         instance = this;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         win = true;
 
         Camera.main.gameObject.GetComponent<CameraFollower>().target = GameObject.FindGameObjectsWithTag("NPC")[0].transform;
+        timerScript.gameWon = true;
     }
 
     public void LoseGame()
