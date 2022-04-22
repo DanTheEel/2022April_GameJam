@@ -12,15 +12,16 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject blackscreen;
+    public float blackscreenFadeSpeed = 0.5f;
     bool win = false;
 
     private void Update()
     {
         if(win)
         {
-            blackscreen.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(blackscreen.GetComponent<CanvasGroup>().alpha, 1, Time.deltaTime * 0.5f);
+            blackscreen.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(blackscreen.GetComponent<CanvasGroup>().alpha, 1, Time.deltaTime * blackscreenFadeSpeed);
 
-            if(blackscreen.GetComponent<CanvasGroup>().alpha > 0.9f)
+            if(blackscreen.GetComponent<CanvasGroup>().alpha > 0.95f)
             {
                 // mainmenu scene
                 SceneManager.LoadScene(0);

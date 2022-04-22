@@ -35,7 +35,7 @@ public class PlayerInteractions : MonoBehaviour
             Debug.Log("Interacted with object");
         }
 
-        if(!Distraction_System.instance.AreTheyDistracted())
+        if(!Distraction_System.instance.AreTheyDistracted() && Waypoint_System.instance.GetCurrentRoom().interactables.Contains(closest))
         {
             if (closest != null)
             {

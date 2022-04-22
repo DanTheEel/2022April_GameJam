@@ -12,7 +12,7 @@ public class OpeningScreen : MonoBehaviour
 
     IEnumerator OpeningTimer()
     {
-        yield return new WaitForSeconds(10.1f);
+        yield return new WaitForSeconds(10f);
 
         SceneManager.LoadScene(1);
     }
