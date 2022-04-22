@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        oneMinuteLeft = timeValue - 60;
+        oneMinuteLeft = timeValue - 10;
         oneMinuteLeftSound.PlayDelayed(oneMinuteLeft);
     }
 
